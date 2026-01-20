@@ -3,133 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oferta Especial TikTok | 5 Quiz Pessoal</title>
+<title>QUIZ TIKTOK - 2026</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #0b0b0b;
-    color: #fff;
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0b0b0b;
+    color:#fff;
 }
-
-.container {
-    max-width: 760px;
-    margin: auto;
-    padding: 20px;
+.container{
+    max-width:720px;
+    margin:auto;
+    padding:20px;
 }
-
-.card {
-    background: #121212;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 0 40px rgba(0,255,150,0.15);
+.card{
+    background:#121212;
+    border-radius:22px;
+    padding:30px;
+    animation: fade 0.6s ease;
 }
-
-.badge {
-    background: #00ff99;
-    color: #000;
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 13px;
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px)}
+    to{opacity:1; transform:translateY(0)}
 }
-
-h1 {
-    margin-top: 15px;
-    text-align: center;
+h1,h2{
+    text-align:center;
 }
-
-.valor {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    color: #00ff99;
-    margin: 20px 0;
+.progress{
+    background:#1f1f1f;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:25px;
 }
-
-.progress {
-    background: #1f1f1f;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px 0;
+.progress-bar{
+    height:12px;
+    background:#00ff99;
+    width:0%;
+    transition:0.4s;
 }
-
-.progress-bar {
-    width: 100%;
-    background: #00ff99;
-    height: 14px;
+.option{
+    background:#1f1f1f;
+    padding:16px;
+    border-radius:14px;
+    margin:12px 0;
+    cursor:pointer;
+    text-align:center;
+    font-weight:bold;
+    transition:0.3s;
 }
-
-p {
-    line-height: 1.6;
-    color: #ddd;
+.option:hover{
+    background:#00ff99;
+    color:#000;
 }
-
-.form {
-    margin-top: 30px;
-    background: #1a1a1a;
-    padding: 25px;
-    border-radius: 15px;
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
 }
-
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
+.btn{
+    background:#00ff99;
+    color:#000;
+    margin-top:20px;
 }
-
-input, select {
-    width: 100%;
-    padding: 14px;
-    border-radius: 10px;
-    border: none;
-    margin-top: 6px;
-    font-size: 15px;
+.valor-box{
+    background:#0f0f0f;
+    border:2px solid #00ff99;
+    border-radius:50px;
+    padding:20px;
+    text-align:center;
+    margin:20px 0;
 }
-
-button {
-    width: 100%;
-    padding: 18px;
-    border-radius: 40px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+.valor{
+    font-size:36px;
+    font-weight:bold;
+    color:#00ff99;
 }
-
-.btn-finalizar {
-    background: #00ff99;
-    color: #000;
-    margin-top: 25px;
+input,select{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:none;
+    margin-top:10px;
+    font-size:15px;
 }
-
-.taxa {
-    display: none;
-    margin-top: 30px;
-    background: #101010;
-    padding: 25px;
-    border-radius: 15px;
-    border: 2px solid #00ff99;
+.taxa{
+    background:#101010;
+    padding:22px;
+    border-radius:18px;
+    margin-top:25px;
+    animation: fade 0.6s ease;
 }
-
-.taxa h2 {
-    text-align: center;
-    font-weight: bold;
-}
-
-.btn-liberar {
-    background: #00c853;
-    color: #fff;
-    margin-top: 20px;
-}
-
-footer {
-    text-align: center;
-    font-size: 12px;
-    color: #999;
-    margin-top: 30px;
+.btn-liberar{
+    background:#00c853;
+    color:#fff;
+    margin-top:20px;
 }
 </style>
 </head>
@@ -139,79 +111,111 @@ footer {
 <div class="container">
 <div class="card">
 
-<div style="text-align:center;">
-<span class="badge">OFERTA ESPECIAL • TIKTOK • JANEIRO</span>
-</div>
-
-<h1>5 Quiz Pessoal Concluídos</h1>
-
 <div class="progress">
-<div class="progress-bar"></div>
+    <div class="progress-bar" id="bar"></div>
 </div>
 
-<p style="text-align:center;">
-Você concluiu todos os quizzes disponíveis nesta campanha especial do TikTok.
-</p>
-
-<div class="valor">
-R$ 4.267,90
-</div>
-
-<p style="text-align:center;">
-Valor disponível para saque imediato após validação.
-</p>
-
-<div class="form">
-<h2 style="text-align:center;">Dados para Recebimento (PIX)</h2>
-
-<label>Nome Completo</label>
-<input type="text" placeholder="Digite seu nome completo">
-
-<label>Tipo de Chave PIX</label>
-<select>
-<option>Email</option>
-<option>Telefone</option>
-<option>CPF</option>
-</select>
-
-<label>Chave PIX</label>
-<input type="text" placeholder="Digite sua chave PIX">
-
-<button class="btn-finalizar" onclick="liberar()">
-FINALIZAR QUIZ
-</button>
-</div>
-
-<div class="taxa" id="taxa">
-<h2><strong>TAXA DE LIBERAÇÃO</strong></h2>
-
-<p>
-Teremos uma taxa de liberação no valor de <strong>R$ 19,90</strong>.
-Esse valor será <strong>REEMBOLSÁVEL instantaneamente</strong> e o seu saque
-resgatado cairá no mesmo instante.
-</p>
-
-<p><strong>Agradecemos a compreensão!</strong></p>
-
-<a href="https://pay.kirvano.com/42e1d2e6-a217-4ce0-939a-67efe7cecd52">
-<button class="btn-liberar">
-LIBERAR SALDO
-</button>
-</a>
-</div>
-
-<footer>
-Campanha promocional TikTok • Janeiro
-</footer>
+<div id="conteudo"></div>
 
 </div>
 </div>
 
 <script>
-function liberar() {
-    document.getElementById("taxa").style.display = "block";
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+let etapa = 0;
+
+const quiz = [
+  {
+    inicio:true,
+    titulo:"QUIZ TIKTOK - 2026",
+    texto:"Responda 5 perguntas rápidas para validar seu resgate."
+  },
+  {
+    pergunta:"QUAIS REDES SOCIAIS VOCÊ MAIS USA DIARIAMENTE?",
+    opcoes:["TikTok","Instagram","Facebook","Kwai"]
+  },
+  {
+    pergunta:"QUAL ANIMAL VOCÊ PREFERE?",
+    opcoes:["Cachorro","Gato"]
+  },
+  {
+    pergunta:"QUAL SUA COMIDA FAVORITA?",
+    opcoes:["Pizza","Hambúrguer","Lasanha","Pastel"]
+  },
+  {
+    pergunta:"QUAL VOCÊ PREFERE?",
+    opcoes:["Carro","Moto","Avião","Ônibus"]
+  },
+  {
+    final:true
+  }
+];
+
+function render(){
+  const el = document.getElementById("conteudo");
+  const bar = document.getElementById("bar");
+  bar.style.width = (etapa / (quiz.length-1)) * 100 + "%";
+  el.innerHTML = "";
+
+  const atual = quiz[etapa];
+
+  if(atual.inicio){
+    el.innerHTML = `
+      <h1>${atual.titulo}</h1>
+      <p style="text-align:center">${atual.texto}</p>
+      <button class="btn" onclick="proximo()">Avançar</button>
+    `;
+  }
+  else if(atual.final){
+    el.innerHTML = `
+      <h2>Área de Resgate TikTok</h2>
+
+      <div class="valor-box">
+        <div class="valor">R$ 4.267,90</div>
+        <p>Saldo disponível para saque</p>
+      </div>
+
+      <label>Nome Completo</label>
+      <input type="text" placeholder="Digite seu nome completo">
+
+      <label>Tipo de Chave PIX</label>
+      <select>
+        <option>Email</option>
+        <option>Telefone</option>
+        <option>CPF</option>
+      </select>
+
+      <label>Chave PIX</label>
+      <input type="text" placeholder="Digite sua chave PIX">
+
+      <div class="taxa">
+        <h2><strong>TAXA DE LIBERAÇÃO</strong></h2>
+        <p>
+          Teremos uma taxa de liberação do valor de <strong>R$ 19,90</strong>.
+          Esse valor será <strong>REEMBOLSÁVEL instantâneo</strong> e seu saque
+          resgatado cairá no mesmo instante.
+        </p>
+        <p><strong>Agradecemos a compreensão!</strong></p>
+
+        <a href="https://pay.kirvano.com/42e1d2e6-a217-4ce0-939a-67efe7cecd52">
+          <button class="btn-liberar">LIBERAR SALDO</button>
+        </a>
+      </div>
+    `;
+  }
+  else{
+    el.innerHTML = `<h2>${atual.pergunta}</h2>`;
+    atual.opcoes.forEach(op=>{
+      el.innerHTML += `<div class="option" onclick="proximo()">${op}</div>`;
+    });
+  }
 }
+
+function proximo(){
+  etapa++;
+  render();
+}
+
+render();
 </script>
 
 </body>
