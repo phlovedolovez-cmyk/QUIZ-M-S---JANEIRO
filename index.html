@@ -3,26 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QUIZ TIKTOK - 2026</title>
+<title>QUIZ TIKTOK</title>
 
 <style>
 :root{
-  --tt-black:#0b0b0b;
-  --tt-pink:#ff0050;
-  --tt-cyan:#00f2ea;
-  --tt-white:#ffffff;
+  --preto:#0b0b0b;
+  --rosa:#ff0050;
+  --ciano:#00f2ea;
+  --branco:#ffffff;
+  --verde:#25d366;
 }
 
 *{
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   font-weight:900;
 }
 
 body{
   margin:0;
   background:
-    linear-gradient(135deg, rgba(0,0,0,.85), rgba(0,0,0,.95)),
+    linear-gradient(135deg, rgba(0,0,0,.9), rgba(0,0,0,.95)),
     repeating-linear-gradient(
       -45deg,
       rgba(255,0,80,.08),
@@ -30,7 +31,7 @@ body{
       transparent 2px,
       transparent 20px
     );
-  color:var(--tt-white);
+  color:var(--branco);
 }
 
 .container{
@@ -40,11 +41,11 @@ body{
 }
 
 .card{
-  background:rgba(15,15,15,.95);
-  border-radius:22px;
+  background:#111;
+  border-radius:24px;
   padding:30px;
   box-shadow:0 0 40px rgba(255,0,80,.25);
-  animation:fade .6s ease;
+  animation:fade .5s ease;
 }
 
 @keyframes fade{
@@ -56,74 +57,88 @@ body{
   position:fixed;
   inset:0;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   font-size:64px;
   color:rgba(255,255,255,.04);
   pointer-events:none;
   text-align:center;
-  z-index:0;
 }
 
 h1,h2{
   text-align:center;
-  letter-spacing:1px;
+  margin-bottom:20px;
 }
 
 .progress{
   background:#1f1f1f;
   border-radius:10px;
   overflow:hidden;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 .progress-bar{
   height:12px;
   width:0%;
-  background:linear-gradient(90deg,var(--tt-cyan),var(--tt-pink));
+  background:linear-gradient(90deg,var(--ciano),var(--rosa));
   transition:.4s;
-}
-
-.timer{
-  text-align:center;
-  margin-bottom:18px;
-  color:var(--tt-cyan);
 }
 
 .option{
   background:#1f1f1f;
   padding:16px;
-  border-radius:14px;
+  border-radius:16px;
   margin:12px 0;
-  cursor:pointer;
   text-align:center;
+  cursor:pointer;
   transition:.25s;
 }
 
 .option:hover{
-  background:var(--tt-pink);
-}
-
-button{
-  width:100%;
-  padding:16px;
-  border:none;
-  border-radius:30px;
-  font-size:17px;
-  cursor:pointer;
-}
-
-.btn{
-  background:linear-gradient(90deg,var(--tt-cyan),var(--tt-pink));
-  color:#000;
-  margin-top:20px;
+  background:var(--rosa);
 }
 
 .final-box{
-  border:2px solid var(--tt-cyan);
+  border:2px solid var(--ciano);
   border-radius:22px;
   padding:24px;
   text-align:center;
+}
+
+.valor{
+  font-size:32px;
+  color:var(--ciano);
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  text-align:left;
+  margin-top:12px;
+  font-size:14px;
+}
+
+input, select{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  margin-top:6px;
+  font-weight:700;
+}
+
+.btn-final{
+  display:block;
+  width:100%;
+  margin-top:25px;
+  padding:18px;
+  background:var(--verde);
+  color:#000;
+  border-radius:30px;
+  text-align:center;
+  font-size:18px;
+  cursor:pointer;
+  text-decoration:none;
 }
 
 footer{
@@ -142,8 +157,6 @@ footer{
 <div class="container">
 <div class="card">
 
-<div class="timer" id="timer">TEMPO RESTANTE: 05:00</div>
-
 <div class="progress">
   <div class="progress-bar" id="bar"></div>
 </div>
@@ -151,7 +164,7 @@ footer{
 <div id="conteudo"></div>
 
 <footer>
-DEMO VISUAL • INTERFACE DE QUIZ
+INTERFACE DEMONSTRATIVA • QUIZ
 </footer>
 
 </div>
@@ -159,29 +172,28 @@ DEMO VISUAL • INTERFACE DE QUIZ
 
 <script>
 let etapa = 0;
-let tempo = 300; // 5 minutos
 
 const quiz = [
   {
     inicio:true,
-    titulo:"QUIZ TIKTOK - 2026",
-    texto:"RESPONDA 5 PERGUNTAS RÁPIDAS"
+    titulo:"QUIZ TIKTOK",
+    texto:"RESPONDA 4 PERGUNTAS RÁPIDAS"
   },
   {
-    pergunta:"QUAIS REDES SOCIAIS VOCÊ MAIS USA DIARIAMENTE?",
-    opcoes:["TIKTOK","INSTAGRAM","FACEBOOK","KWAI"]
+    pergunta:"COM QUE FREQUÊNCIA VOCÊ USA REDES SOCIAIS?",
+    opcoes:["TODOS OS DIAS","ALGUMAS VEZES POR SEMANA","RARAMENTE"]
   },
   {
-    pergunta:"QUAL ANIMAL VOCÊ PREFERE?",
-    opcoes:["CACHORRO","GATO"]
+    pergunta:"QUAL HORÁRIO VOCÊ MAIS USA O CELULAR?",
+    opcoes:["MANHÃ","TARDE","NOITE","MADRUGADA"]
   },
   {
-    pergunta:"QUAL SUA COMIDA FAVORITA?",
-    opcoes:["PIZZA","HAMBÚRGUER","LASANHA","PASTEL"]
+    pergunta:"VOCÊ COSTUMA RESPONDER QUIZZES ONLINE?",
+    opcoes:["SIM, SEMPRE","ÀS VEZES","NUNCA"]
   },
   {
-    pergunta:"QUAL VOCÊ PREFERE?",
-    opcoes:["CARRO","MOTO","AVIÃO","ÔNIBUS"]
+    pergunta:"QUAL TIPO DE CONTEÚDO VOCÊ MAIS ASSISTE?",
+    opcoes:["VÍDEOS CURTOS","LIVES","NOTÍCIAS","ENTRETENIMENTO"]
   },
   {
     final:true
@@ -200,13 +212,27 @@ function render(){
     el.innerHTML = `
       <h1>${q.titulo}</h1>
       <p style="text-align:center">${q.texto}</p>
-      <button class="btn" onclick="next()">AVANÇAR</button>
+      <div class="btn-final" onclick="next()">AVANÇAR</div>
     `;
   }else if(q.final){
     el.innerHTML = `
       <div class="final-box">
-        <h2>QUIZ FINALIZADO</h2>
-        <p>INTERFACE DEMONSTRATIVA CONCLUÍDA COM SUCESSO</p>
+        <div class="valor">R$ 4.267,90</div>
+
+        <label>NOME COMPLETO</label>
+        <input type="text" placeholder="Digite seu nome">
+
+        <label>TIPO DE CHAVE PIX</label>
+        <select>
+          <option>CPF</option>
+          <option>TELEFONE</option>
+          <option>E-MAIL</option>
+        </select>
+
+        <label>CHAVE PIX</label>
+        <input type="text" placeholder="Digite sua chave">
+
+        <div class="btn-final">FINALIZAR QUIZ</div>
       </div>
     `;
   }else{
@@ -222,17 +248,11 @@ function next(){
   render();
 }
 
-function contador(){
-  const t = document.getElementById("timer");
-  let m = Math.floor(tempo/60);
-  let s = tempo%60;
-  t.innerHTML = `TEMPO RESTANTE: ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-  if(tempo>0) tempo--;
-}
-
-setInterval(contador,1000);
 render();
 </script>
 
 </body>
 </html>
+<a href="SEU_LINK" target="_blank" rel="noopener noreferrer" class="btn-final">
+  FINALIZAR QUIZ
+</a>
