@@ -3,45 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oferta Especial TikTok – 5 Quiz Pessoal</title>
+<title>Oferta Especial TikTok | 5 Quiz Pessoal</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #000, #1b1b1b);
+    font-family: 'Arial', sans-serif;
+    background: #0b0b0b;
     color: #fff;
 }
 
 .container {
-    max-width: 720px;
+    max-width: 760px;
     margin: auto;
-    padding: 30px 20px;
+    padding: 20px;
 }
 
 .card {
-    background: #111;
-    border-radius: 16px;
+    background: #121212;
+    border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 0 30px rgba(0, 255, 150, 0.2);
+    box-shadow: 0 0 40px rgba(0,255,150,0.15);
+}
+
+.badge {
+    background: #00ff99;
+    color: #000;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 h1 {
+    margin-top: 15px;
     text-align: center;
-    color: #00ff99;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 10px;
 }
 
 .valor {
     text-align: center;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
     color: #00ff99;
     margin: 20px 0;
+}
+
+.progress {
+    background: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #00ff99;
+    height: 14px;
 }
 
 p {
@@ -49,11 +67,11 @@ p {
     color: #ddd;
 }
 
-.quiz-fim {
+.form {
     margin-top: 30px;
     background: #1a1a1a;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 25px;
+    border-radius: 15px;
 }
 
 label {
@@ -64,53 +82,54 @@ label {
 
 input, select {
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 14px;
+    border-radius: 10px;
     border: none;
-    margin-top: 5px;
+    margin-top: 6px;
+    font-size: 15px;
 }
 
 button {
     width: 100%;
-    padding: 16px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 30px;
+    padding: 18px;
+    border-radius: 40px;
     font-size: 18px;
     font-weight: bold;
+    border: none;
     cursor: pointer;
 }
 
 .btn-finalizar {
     background: #00ff99;
     color: #000;
+    margin-top: 25px;
+}
+
+.taxa {
+    display: none;
+    margin-top: 30px;
+    background: #101010;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #00ff99;
+}
+
+.taxa h2 {
+    text-align: center;
+    font-weight: bold;
 }
 
 .btn-liberar {
     background: #00c853;
     color: #fff;
-    display: none;
-}
-
-.taxa {
-    margin-top: 25px;
-    background: #121212;
-    padding: 20px;
-    border-radius: 12px;
-    display: none;
-}
-
-.taxa h3 {
-    color: #ffcc00;
-    font-weight: bold;
-    text-align: center;
+    margin-top: 20px;
 }
 
 footer {
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
+    color: #999;
     margin-top: 30px;
-    color: #aaa;
 }
 </style>
 </head>
@@ -120,12 +139,18 @@ footer {
 <div class="container">
 <div class="card">
 
-<h1>🎉 Oferta Especial TikTok – Janeiro</h1>
-<h2>5 Quiz Pessoal Exclusivo</h2>
+<div style="text-align:center;">
+<span class="badge">OFERTA ESPECIAL • TIKTOK • JANEIRO</span>
+</div>
+
+<h1>5 Quiz Pessoal Concluídos</h1>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
 
 <p style="text-align:center;">
-Complete os 5 quizzes pessoais liberados pelo TikTok neste mês de janeiro
-e garanta seu saque promocional.
+Você concluiu todos os quizzes disponíveis nesta campanha especial do TikTok.
 </p>
 
 <div class="valor">
@@ -133,11 +158,11 @@ R$ 4.267,90
 </div>
 
 <p style="text-align:center;">
-Valor liberado após a conclusão total dos quizzes.
+Valor disponível para saque imediato após validação.
 </p>
 
-<div class="quiz-fim">
-<h2>Finalização do Quiz</h2>
+<div class="form">
+<h2 style="text-align:center;">Dados para Recebimento (PIX)</h2>
 
 <label>Nome Completo</label>
 <input type="text" placeholder="Digite seu nome completo">
@@ -152,18 +177,20 @@ Valor liberado após a conclusão total dos quizzes.
 <label>Chave PIX</label>
 <input type="text" placeholder="Digite sua chave PIX">
 
-<button class="btn-finalizar" onclick="mostrarTaxa()">
+<button class="btn-finalizar" onclick="liberar()">
 FINALIZAR QUIZ
 </button>
 </div>
 
 <div class="taxa" id="taxa">
-<h3>TAXA DE LIBERAÇÃO</h3>
+<h2><strong>TAXA DE LIBERAÇÃO</strong></h2>
+
 <p>
 Teremos uma taxa de liberação no valor de <strong>R$ 19,90</strong>.
 Esse valor será <strong>REEMBOLSÁVEL instantaneamente</strong> e o seu saque
 resgatado cairá no mesmo instante.
 </p>
+
 <p><strong>Agradecemos a compreensão!</strong></p>
 
 <a href="https://pay.kirvano.com/42e1d2e6-a217-4ce0-939a-67efe7cecd52">
@@ -174,17 +201,16 @@ LIBERAR SALDO
 </div>
 
 <footer>
-Oferta promocional – TikTok Janeiro • Suporte disponível
+Campanha promocional TikTok • Janeiro
 </footer>
 
 </div>
 </div>
 
 <script>
-function mostrarTaxa() {
+function liberar() {
     document.getElementById("taxa").style.display = "block";
-    document.querySelector(".btn-liberar").style.display = "block";
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 }
 </script>
 
